@@ -2,3 +2,4 @@ flask
 gunicorn
 opencv-python
 PyDrive2
+google-generativeai
