@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SecureStream Login</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+            height: 100vh;
+            background: linear-gradient(135deg, #5f2c82, #49a09d, #6a11cb);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            width: 900px;
+            height: 450px;
+            display: flex;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+        }
+
+        .left {
+            width: 50%;
+            background: linear-gradient(135deg, #6a82fb, #8f94fb);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 30px;
+        }
+
+        .left h1 {
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        .left p {
+            opacity: 0.9;
+        }
+
+        .left button {
+            margin-top: 20px;
+            padding: 12px 25px;
+            border-radius: 25px;
+            border: none;
+            background: white;
+            color: #5f9cff;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .right {
+            width: 50%;
+            background: #1e1e2f;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .right h2 {
+            color: white;
+            margin-bottom: 20px;
+        }
+
+        .form-box {
+            width: 70%;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border-radius: 25px;
+            border: none;
+            outline: none;
+        }
+
+        button.login-btn {
+            width: 100%;
+            padding: 12px;
+            border-radius: 25px;
+            border: none;
+            background: linear-gradient(90deg, #00c6ff, #0072ff);
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="left">
+        <h1>Welcome to SecureStream</h1>
+        <p>Protect • Track • Detect</p>
+        <button>Let's Begin 🚀</button>
+    </div>
+
+    <div class="right">
+        <h2>Login</h2>
+
+        <form class="form-box" action="/login" method="post">
+            <input type="text" name="username" placeholder="Username" required>
+            <input type="password" name="password" placeholder="Password" required>
+
+            <button class="login-btn" type="submit">Login</button>
+        </form>
+    </div>
+
+</div>
+
+</body>
+</html>
