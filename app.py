@@ -54,7 +54,7 @@ def upload_video():
         file.save(input_path)
 
         # Apply watermark
-        apply_watermark(input_path, output_path)
+        #apply_watermark(input_path, output_path)
 
         # Upload to Drive
         drive_id = upload_to_drive(output_path)
