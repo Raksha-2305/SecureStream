@@ -49,19 +49,17 @@ def upload_video():
 
     if file:
         input_path = os.path.join(UPLOAD_FOLDER, file.filename)
-        output_path = os.path.join(PROCESSED_FOLDER, "secured_" + file.filename)
 
         file.save(input_path)
 
-        # Apply watermark
-        # apply_watermark(input_path, output_path)
+        # since watermark is OFF, use same file
+        output_path = input_path
 
-        # Upload to Drive
         drive_id = upload_to_drive(output_path)
 
         return render_template(
             "result.html",
-            filename="secured_" + file.filename,
+            filename=file.filename,
             drive_id=drive_id
         )
 
@@ -71,7 +69,7 @@ def upload_video():
 # 🔹 Download
 @app.route('/download/<filename>')
 def download_file(filename):
-    path = os.path.join(PROCESSED_FOLDER, filename)
+    path = os.path.join(UPLOAD_FOLDER, filename)
 
     if not os.path.exists(path):
         return "File not found"
