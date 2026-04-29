@@ -72,6 +72,10 @@ def upload_video():
 @app.route('/download/<filename>')
 def download_file(filename):
     path = os.path.join(PROCESSED_FOLDER, filename)
+
+    if not os.path.exists(path):
+        return "File not found"
+
     return send_file(path, as_attachment=True)
 
 
