@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Detection Result</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+            height: 100vh;
+            background: linear-gradient(135deg, #5f2c82, #49a09d, #6a11cb);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+        }
+
+        .box {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 40px;
+            border-radius: 20px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            width: 350px;
+        }
+
+        h2 {
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        .success {
+            color: #00ffae;
+        }
+
+        .fail {
+            color: #ff6b6b;
+        }
+
+        .icon {
+            font-size: 50px;
+            margin-bottom: 15px;
+        }
+
+        button {
+            margin-top: 25px;
+            padding: 10px 25px;
+            border-radius: 25px;
+            border: none;
+            background: white;
+            color: #333;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        button:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="box">
+
+    {% if result %}
+        <div class="icon">✅</div>
+        <h2 class="success">Ownership Verified</h2>
+        <p>This video belongs to you.</p>
+    {% else %}
+        <div class="icon">❌</div>
+        <h2 class="fail">Not Your Video</h2>
+        <p>No watermark detected.</p>
+    {% endif %}
+
+    <a href="/detect_page">
+        <button>Check Another Video</button>
+    </a>
+
+</div>
+
+</body>
+</html>

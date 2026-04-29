@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Detect Watermark</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+            height: 100vh;
+            background: linear-gradient(135deg, #5f2c82, #49a09d, #6a11cb);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+        }
+
+        .container {
+            background: rgba(255,255,255,0.1);
+            padding: 40px;
+            border-radius: 20px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            width: 350px;
+        }
+
+        input {
+            margin-top: 10px;
+            padding: 10px;
+            border-radius: 20px;
+            border: none;
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 10px 25px;
+            border-radius: 25px;
+            border: none;
+            background: white;
+            color: black;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        #file-name {
+            margin-top: 10px;
+            font-size: 14px;
+            color: #ddd;
+        }
+
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h2>🔍 Detect Watermark</h2>
+
+    <form action="/detect" method="post" enctype="multipart/form-data">
+        <input type="file" name="video" id="fileInput" required>
+        <div id="file-name">No file selected</div>
+
+        <button type="submit">Check</button>
+    </form>
+
+</div>
+
+<script>
+document.getElementById("fileInput").addEventListener("change", function() {
+    let fileName = this.files[0]?.name || "No file selected";
+    document.getElementById("file-name").innerText = fileName;
+});
+</script>
+
+</body>
+</html>
