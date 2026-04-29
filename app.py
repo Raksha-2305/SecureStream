@@ -4,7 +4,7 @@ from watermark import apply_watermark, detect_watermark
 from drive_upload import upload_to_drive
 from gemini import get_hashtags   # 🔥 NEW (AI)
 
-app = Flask(_name_)
+app = Flask(__name__)
 
 UPLOAD_FOLDER = "uploads"
 PROCESSED_FOLDER = "processed"
@@ -135,5 +135,5 @@ def check_video():
 
 
 # 🚀 Run
-if _name_ == '_main_':
+if __name__ == '__main__':
     app.run(debug=True)
